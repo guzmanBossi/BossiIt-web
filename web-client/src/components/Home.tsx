@@ -56,12 +56,15 @@ function Home() {
 
       let newOutput = [...output]
 
-      //first add the new input 
-      let inputRow = <div>{getInputPromptPrefix() + input + "\n"}</div>;
+      let key = output.length;
+      //first add the new input
+      key++;
+      let inputRow = <div key={key}>{getInputPromptPrefix() + input + "\n"}</div>;
       newOutput.push(inputRow)
 
       //then add the result of the input 
-      let outputElement = getResultFromInput(input)
+      key++;
+      let outputElement = getResultFromInput(input, key)
       newOutput.push(outputElement)
 
       //last refresh output and clear the input
@@ -71,12 +74,13 @@ function Home() {
   }
 
 
-  function getResultFromInput(input: string) : JSX.Element {
+
+  function getResultFromInput(input: string, key: number) : JSX.Element {
     switch (input) {
       case "hello":
-        return <div>Hello, how are you?</div>
+        return <div key={key}>Hello, how are you?</div>
       default:
-        return <div>I don't know what to say.</div>
+        return <div key={key}>I don't know what to say.</div>
     }
   }
 
