@@ -1,0 +1,23 @@
+#screen {
+    text-shadow: 1px 1px 2px #8aff00;
+    color: #8aff00;
+    caret-shape: underscore;
+    caret-color: #8aff00;
+    font-size: 2rem;
+}
+
+div.caret-underscore > span:nth-child(2) {
+    animation: blink 1s step-end infinite;
+    border-bottom: 2px solid #8aff00;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #8aff00;
+    }
+  }
