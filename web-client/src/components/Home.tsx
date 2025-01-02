@@ -90,13 +90,18 @@ function Home() {
       newOutput.push(outputElement)
 
       //if new output is longer than 12, remove the first element
-      console.log("NEW OUTPUT length", newOutput.length)
-      if (newOutput.length > 11) {
-        let amountToRemove = newOutput.length - 10;
-        console.log("AMOUNT TO REMOVE", amountToRemove)
-        newOutput = newOutput.slice(amountToRemove);
-        // console.log("REMOVED")
-      }
+      //detta är en dålig idé eftersom ett element i output kan vara flera rader
+      //gör detta robust med maxheight istället
+      //tydligen kan man alltid ha scrollat längst ner om listan är uppoch ner
+      //och man har flex column reverse eller liknande
+      
+      // console.log("NEW OUTPUT length", newOutput.length)
+      // if (newOutput.length > 11) {
+      //   let amountToRemove = newOutput.length - 10;
+      //   console.log("AMOUNT TO REMOVE", amountToRemove)
+      //   newOutput = newOutput.slice(amountToRemove);
+      //   // console.log("REMOVED")
+      // }
 
       //last refresh output and clear the input
       setOutput(newOutput)
